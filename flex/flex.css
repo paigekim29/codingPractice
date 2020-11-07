@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+  }
+  
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+#container {
+    display: flex;
+    flex: 1;
+}
+
+.col{
+    border: 5px solid red;
+    min-height: 100vh;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.w20{
+    width: 20%;
+}
+.icon{
+    border: 3px dotted orange;
+    margin: 10px;
+    height: 50px;
+}
+
+.row{
+    border: 3px dotted purple;
+    margin: 10px;
+    flex: 1 1 auto;
+}
+.w70 { 
+    width: 70%; 
+}
+
+.h40{
+    flex: 4 1 auto;
+}
+
+.h80{
+    flex: 8 1 auto;
+}
