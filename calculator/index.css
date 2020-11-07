@@ -1,0 +1,134 @@
+/* TODO : CSS파일을 편집하여 원하는 스타일의 계산기를 만들어보세요 :) */
+
+/* global */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #000;
+  }
+  
+  body {
+    background-image: url('./codestates-motif.png');
+  }
+  
+  /*
+    Calculator styles
+  */
+  
+  .container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .calculator {
+    background-color: #c1a7fa;
+    width: 400px;
+    height: 550px;
+    border-radius: 20px;
+    padding: 15px;
+    border: solid 5px rgb(111, 199, 199);
+    border-bottom: solid 7px darkcyan;
+    box-shadow: 10px 10px 10px rgba(111, 199, 199, .7);
+  }
+  
+  .calculator__display {
+    background-color: #ffffff;
+    height: 120px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: end;
+    padding: 25px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    border: solid 5px rgb(111, 199, 199);
+  }
+  
+  .calculator__buttons {
+    background-color: #ffffff;
+    width: 100%;
+    height: 380px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 5px rgb(111, 199, 199);
+  }
+  
+  .clear__and__enter {
+    height: 50px;
+    margin: 10px;
+    background-color: #f3f0fc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .clear__and__enter > button {
+    border-radius: 20px;
+    border-bottom: 3px solid darkcyan;
+    width: 100%;
+    height: 40px;
+    margin: 0px 5px;
+    background-color: #bec7f0;
+    cursor: pointer;
+    outline: none;
+    margin-right: 5px;
+  }
+  
+  .button__row {
+    height: 60px;
+    margin: 10px;
+    background-color: #f3f0fc;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 5px;
+  }
+  
+  .button__row > button {
+    width: 90px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    background-color: #ebebeb;
+    margin: 0px 3px;
+  }
+  
+  .number:active{
+    background-color: rgb(111, 199, 199);
+  }
+  
+  
+  .number:hover{
+    background-color: pink;
+  }
+  
+  .number:active{
+    background-color: rgb(111, 199, 199);
+  }
+  .button__row > .operator {
+    color: #ffffff;
+    background-color: #313132;
+  }
+  
+  .button__row > .double {
+    width: 180px;
+  }
+  
+  .button__row > .isPressed {
+    background-color: rgb(111, 199, 199);
+  }
+  
+  .logo {
+    position: fixed;
+    padding: 30px;
+    bottom: 0px;
+    right: 0px;
+  }
+  
