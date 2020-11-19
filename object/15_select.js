@@ -13,23 +13,35 @@
 // 입력받은 객체를 수정하지 않아야 합니다.
 
 function select(arr, obj) {
-    let arr2={}
-    for(i of arr){
-      if(obj[i] !== undefined){
-        arr2[i] =obj[i];
-      }
+  let arr2 = {};
+  for (i of arr) {
+    if (obj[i] !== undefined) {
+      arr2[i] = obj[i];
     }
-    return arr2;
   }
-  
+  return arr2;
+}
+
 function select(arr, obj) {
-    let newObj = {};
-    for (let prop in obj) {
-      for (let i = 0; i < arr.length; i++) {
-        if (prop === arr[i]) {
-          newObj[prop] = obj[prop];
-        }
+  let newObj = {};
+  for (let prop in obj) {
+    for (let i = 0; i < arr.length; i++) {
+      if (prop === arr[i]) {
+        newObj[prop] = obj[prop];
       }
     }
-    return newObj;
+  }
+  return newObj;
+}
+
+function select(arr, obj) {
+  let result = {};
+  let keyArr = Object.keys(obj);
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < keyArr.length; j++)
+      if (arr[i] === keyArr[j]) {
+        result[arr[i]] = obj[arr[i]];
+      }
+  }
+  return result;
 }
