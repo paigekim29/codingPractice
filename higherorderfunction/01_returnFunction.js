@@ -13,3 +13,5 @@ function returnFunction() {
       return 'Hello HoF!';
     };
 }
+function returnFunction() {
+return () => 'Hello HoF!'}

@@ -40,7 +40,13 @@
 //   }
 //   return [...reverseArr(arr.slice(1)), arr[0]]
 // }
-
+function reverseArr(arr) {
+  // TODO: 여기에 코드를 작성합니다.
+  if(arr.length===0){
+    return arr
+  }
+  return [arr[arr.length-1], ...reverseArr(arr.slice(0,-1))]
+}
 
 function reverseArr(arr) {
   if(arr.length === 0){
@@ -48,30 +54,37 @@ function reverseArr(arr) {
   }
   const head=  arr[0]
   const tail = arr.slice(1)
-
-
   return reverseArr(tail).concat([head])
 }
+//함수를 기준으로 헤드를 더하는 것이므로 3-2-1
 //[1,2,3]일 때 3이 Head이고 제일 바닥을 칠테니깐, [3][2][1] 이 상태로 나오게 됨
 
 let output= reverseArr([1,2,3])
 console.log(output)
 
-// function reverseArr(arr){
-//   const head = arr.slice(-1)
-//   const tail = arr.slice(0,-1)
-//
-//   if(arr.length === 0){
-//     return []
-//   }
-//   return head.concat(reverseArr(tail))
-// }
-//
-// function reverseArr(arr) {
-//   const head=  arr.slice(-1)
-//   const tail = arr.slice(0, arr.length-1)
-//   if(arr.length === 0){
-//     return []
-//   }
-//   return head.concat(reverseArr(tail))
-// }
+function reverseArr(arr){
+  const head = arr.slice(-1)
+  const tail = arr.slice(0,-1)
+
+  if(arr.length === 0){
+    return []
+  }
+  return head.concat(reverseArr(tail))
+}
+//헤드를 기준으로 함수를 더하므로 3-2-1
+function reverseArr(arr) {
+  // TODO: 여기에 코드를 작성합니다.
+  if(arr.length === 0) return [];
+// [1,2,3,4]
+  const tail = arr[arr.length - 1]
+// [4]
+  const head = arr.slice(0,arr.length - 1)
+// [1,2,3]
+  return [tail, ...reverseArr(head)]
+      [4, ...reverseArr([1,2,3])] => [3, ..reverseArr([1,2])]
+  [4,...[3,2,1]]
+  reverseArr(head)<- [1,2,3] => return [3, ...[2,1]] => reverseArr([1,2]) => [ 2, ...[1]]
+  reverseArr([1]) => =>[1] =>
+  [4, ...reverseArr(head)] => [3, ...reverseArr(head)]
+  return [tail].concat(reverseArr(head))
+}

@@ -27,7 +27,7 @@ function decryptCaesarCipher(str, secret){
     for(let i=0; i<str.length; i++){
       if(str[i]===' '){
         result += ' ';
-        continue;
+        continue; //indexOf가 if문 안에 있기 때문에 만약에 빈문자열을 만나면 -1이 되고, 공백 뒤에 어떤 문자가 붙게 됨
       }
       if(alphabet.indexOf(str[i]) !== -1){ //str[i]=0일 때 a이면 falsy이기에 스킵됨
         if(alphabet.indexOf(str[i])-secret >= 0){

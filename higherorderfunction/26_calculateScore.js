@@ -48,41 +48,61 @@ output = calculateScore(records, 'mouse');
 console.log(output); // --> 0
 
 function calculateScore(records, value) {
-  const sum = records.reduce(function(acc, cur){
-    if(cur.animal === value){
+  return records.filter(el => el.animal === value).
+      reduce((acc, cur) => acc + cur.score, 0);
+}
+
+function calculateScore(records, value) {
+  return records.reduce(
+      (acc, cur) => cur.animal === value ? acc + cur.score : acc, 0);
+}
+
+function calculateScore(records, value) {
+  const sum = records.reduce(function(acc, cur) {
+    if (cur.animal === value) {
       return acc + cur.score;
-    }
-    else{
-      return acc; // 아무것도 하지 않았다. 
+    } else {
+      return acc; // 아무것도 하지 않았다.
     }
   }, 0);
   return sum;
 }
 
 function calculateScore(records, value) {
-  return records.filter(function (val){
+  return records.filter(function(val) {
     return val.animal === value;
-  })
-  .reduce(function(acc, val){
+  }).reduce(function(acc, val) {
     return acc + val.score;
-  }, 0)
+  }, 0);
 }
-function calculateScore(records, value){
-  const isAnimalEqual = function(record){
-    return record.animal ===value;
-  }
-  const filteredRecords= records.filter(isAnimalEqual) // record 분류. 주어진 요소의 animal이 value와 같은지
+
+function calculateScore(records, value) {
+  const isAnimalEqual = function(record) {
+    return record.animal === value;
+  };
+  const filteredRecords = records.filter(isAnimalEqual); // record 분류. 주어진 요소의 animal이 value와 같은지
   // 각 요소의 'animal' 속성값이 문자열과 일치할 경우
-  const result = filteredRecords.reduce(function(sum, record){
+  const result = filteredRecords.reduce(function(sum, record) {
     return sum + record.score;
   }, 0);
-  return result
+  return result;
 }
-function calculateScore(records, value){
-  let list = records.filter(function(record){
-    return record.animal === value // check whether animal name matches up
-  })
-  return list.reduce(function(acc, record){ // has to be same parameter as above to add up what they ask
+
+function calculateScore(records, value) {
+  let list = records.filter(function(record) {
+    return record.animal === value; // check whether animal name matches up
+  });
+  return list.reduce(function(acc, record) { // has to be same parameter as above to add up what they ask
     return acc + record.score; // if it matches, start add up its score
-  }, 0)
+  }, 0);
+}
+
+function calculateScore(records, value) {
+  return records.reduce(function(acc, cur) {
+    if (cur.animal === value) {
+      return acc + cur.score;
+    } else {
+      return acc;
+    } // 동물이 다를 때, undefined가 뜨니깐 else로 acc를 받아줘야 된다
+  }, 0);
 }

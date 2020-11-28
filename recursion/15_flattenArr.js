@@ -44,3 +44,23 @@ function flattenArr(arr) {
 // [1]
 //flattenArr을 만났을 때, 새로운 배열이 만들어지고 리턴
 //최종 배열 Result에 넣을때는 배열로 있으니깐, 배열을 풀어서 넣기!
+
+function flattenArr(arr) {
+  // TODO: 여기에 코드를 작성합니다.
+  let result = [];
+  let result2 =[];
+  if(arr.length === 0){
+    return []
+  }
+  for(let i = 0; i<arr.length; i++){
+    if(!Array.isArray(arr[i])){
+      result.push(arr[i]);
+    }else{
+      result2 = flattenArr(arr[i]); //첫 FOR문으로 돌아가서 RESult2에 들어가게 됨
+      for(let j =0; j < result2.length; j++){ //그리고 나서 result2를 For문을 돌게 되고
+        result.push(result2[j]); //다시 result에 REsult2에 있는 값을 넣어줌
+      }
+    }
+  }
+  return result
+}

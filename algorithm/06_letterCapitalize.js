@@ -44,5 +44,36 @@ function letterCapitalize(str) {
     }
     return arr.join('')
 }
-  
-  
+
+
+function letterCapitalize(str) {
+  // TODO: 여기에 코드를 작성합니다.
+  let result =''
+  for(let i=0; i<str.length; i++){
+    if(i===0){
+      result += str[0].toUpperCase()
+    }
+    else if(str[i-1]===' '){
+      result += str[i].toUpperCase()
+    }
+    else{
+      result +=str[i]
+    }
+  }
+  return result
+}
+
+function letterCapitalize(str) {
+  let previousStr = ' '
+  let result =''
+  for(let i=0; i<str.length; i++){
+    if(previousStr===' '){
+      result += str[i].toUpperCase()
+    }
+    else{
+      result +=str[i]
+    }
+    previousStr =str[i]
+  }
+  return result
+}

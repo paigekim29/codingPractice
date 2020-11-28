@@ -21,12 +21,22 @@
 // output = take(5, [1, -2, 1, 3]);
 // console.log(output); // --> [1, -2, 1, 3]
 
-[1,2,3,4,5]
-take(4)=[1,2,3,4] //[...take(3),arr[num-1]]
-take(3)=[1,2,3] //[...take(2),arr[num-1]]
-take(2)=[1,2] ////[...take(1),arr[num-1]]
-take(1)=[1]
-take(0)=[]
+
+function take(num, arr) {
+  if(num ===0 || arr.length ===0){
+    return []
+  }
+  const head= arr[0]
+  const tail=arr.slice(1)
+  return[head, ...take(num-1, tail)]
+}
+
+// [1,2,3,4,5]
+// take(4)=[1,2,3,4] //[...take(3),arr[num-1]]
+// take(3)=[1,2,3] //[...take(2),arr[num-1]]
+// take(2)=[1,2] ////[...take(1),arr[num-1]]
+// take(1)=[1]
+// take(0)=[]
 function take(num, arr) {
   if(num===0 ||arr.length===0){
     return []
@@ -35,30 +45,6 @@ function take(num, arr) {
     num = arr.length
   }
   return[...take(num-1,arr),arr[num-1]]
-}
-
-
-function take(num, arr) {
-  // arr =[1,2,3,4,5]
-  // num =3
-  // 첫번째 -> [1]
-  // 두번째 -> [1,2]
-  // 세번째 -> [1,2,3]
-  // num  =1
-  // 첫번째 -> [1]
-  // num =2
-  // 첫번째 -> [1]
-  // 두번째 -> [1,2]
-  // num =4
-  // 첫번째 [1]
-  // 두번째 [1,2]
-  // 세번쨰 [1,2,3]
-  // 네번째 [1,2,3,4]
-  if (num === 0) {
-    return arr;
-  }
-  const tail = arr.slice(0, 1);
-  return take(num - 1, tail);
 }
 
 // 1. 재귀 함수의 입력값과 출렵값 정의하기
@@ -107,36 +93,4 @@ function take(num, arr) {
 // num-1 -> num =0
 // return []
 // [1,2] +[] => [1,2]
-
-function take(num, arr) {
-  //head를 arr[0]으로 설정을 해주면서
-  //헤드에 arr.slice(1)을 테일로 지정하면서 첫 값을 넣어주면 될듯
-  //num이 0이 될 떄 까지
-  const head = arr[0]
-  const tail = arr.slice(1)
-  if(arr.length === 0 || num === 0){
-    return []
-  }
-  if(num ===1){
-    return head;
-  }
-  return [head].concat(take(num-1, tail))
-}
-
-function take(num, arr) {
-  //head를 arr[0]으로 설정을 해주면서
-  //헤드에 arr.slice(1)을 테일로 지정하면서 첫 값을 넣어주면 될듯
-  //num이 0이 될 떄 까지
-  const head = arr.slice(0,1)
-  const tail = arr.slice(1)
-  if(arr.length === 0 || num === 0){
-    return []
-  }
-  if(num ===1){
-    return head;
-  }
-  return head.concat(take(num-1, tail))
-}
-
-
 

@@ -36,3 +36,7 @@ function getOnlyNames(arr) {
       return el.name;
     })
   }
+
+function getOnlyNames(arr) {
+  return arr.map(el => el.name)
+}

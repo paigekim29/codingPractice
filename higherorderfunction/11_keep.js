@@ -25,3 +25,7 @@ function keep(arr, keeper){
         return false;
     })
 }
+
+function keep(arr, keeper){
+    return arr.filter(v=>v===keeper)
+}

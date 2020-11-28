@@ -48,4 +48,7 @@ function classicMovies(arr, year) {
       return `${el.title} by ${el.director}`;
     })
   }
-  
+
+function classicMovies(arr, year) {
+  return arr.filter(el=> el.year <year).map(el => `${el.title} by ${el.director}`)
+}

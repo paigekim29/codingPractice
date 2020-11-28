@@ -18,8 +18,26 @@
 
 // console.log(output); // --> [1, 4, true, false, 'x', 'y']
 
+function joinArrayOfArrays(arr) {
+  return arr.reduce((acc,cur)=>[...acc,...cur])
+}
+
 function joinArrayOfArrays(arr){
     return arr.reduce(function(acc, cur){
       return acc.concat(cur)
     })
 }
+
+function joinArrayOfArrays(arr){
+  const callback = function(acc, cur){
+    return [...acc, ...cur]
+  }
+  return arr.reduce(callback)
+}
+
+function joinArrayOfArrays(arr){
+  return arr.reduce(function(acc, cur){
+    return [...acc, ...cur]
+  })
+}
+

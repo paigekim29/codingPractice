@@ -21,6 +21,17 @@
 // 2차원 배열을 1차원으로 만들 경우, 문제가 더 쉬워집니다.
 // 1차원 배열에서 number 타입의 요소만 취할 경우, 문제가 더 쉬워집니다.
 
+
+function sumOfArraysInArray(arr) {
+  return arr.reduce((acc,cur)=> [...acc,...cur]).reduce((acc, cur)=>typeof cur ==='number'? acc+cur:acc,0)
+}
+
+function sumOfArraysInArray(arr) {
+  const merged =arr.reduce((acc,cur)=>[...acc,...cur])
+  const numberArr= merged.filter(el=>typeof el === 'number')
+  return numberArr.reduce((acc,cur)=>acc+cur,0)
+}
+
 function sumOfArraysInArray(arr) {
     const maybeArr = arr.reduce(function(acc,cul){
       return acc.concat(cul)

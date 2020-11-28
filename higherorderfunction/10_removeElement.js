@@ -23,3 +23,19 @@ function removeElement(arr, discarder) {
         return false;   // false이면 배열 생성 안됨
     });
 }
+function removeElement(arr, discarder) {
+    return arr.filter(v=>v!==discarder)
+}
+
+// function removeElement(arr, discarder) {
+//     // TODO: 여기에 코드를 작성합니다.
+//     return arr.reduce(function(acc, cur, index){
+//         if(cur !== discarder){
+//             return acc.concat([index])
+//         } else {
+//             return acc;
+//         }
+//     },[])
+// }
+
+//index를 뽑고 싶을 때

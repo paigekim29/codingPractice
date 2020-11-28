@@ -18,6 +18,11 @@
 // console.log(output); // --> 'one'
 
 function getLongestElement(arr) {
+  return arr.reduce((acc,cur)=>acc.length >= cur.length?acc:cur, '')
+}
+
+
+function getLongestElement(arr) {
     return arr.reduce(function(acc, cur){
       if(acc.length >= cur.length){
         return acc;

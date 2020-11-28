@@ -52,3 +52,6 @@ function getFullNames(arr) {
       return `${el.firstName} ${el.lastName}`
     })
   }
+function getFullNames(arr) {
+  return arr.map(el=> `${el.firstName} ${el.lastName}`)
+}

@@ -21,3 +21,6 @@ function getIndex(arr, num) {
       return el < num; // true일 때만 배열에 el이 추가됨으로 길이를 구할 수 있게 됨
     }).length;
 }
+function getIndex(arr, num) {
+  return arr.filter(el => num > el).length
+}

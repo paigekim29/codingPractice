@@ -19,18 +19,33 @@
 
 // let output = getSquaredElementsAtProperty(obj, 'key');
 // console.log(output); // --> [4, 1, 25]
+//
+// function square(number) {
+//   if(typeof number === 'number'){
+//     return number * number;
+//   }
+//
+// }
+//
+// function getSquaredElementsAtProperty(obj, property) {
+//   if(Array.isArray(obj[property])){
+//     return obj[property].map(square)
+//   }
+//   else{
+//     return []
+//   }
+// }
 
 function square(number) {
-  if (typeof number === 'number') {
-    return number * number;
-  }
+  return number * number;
 }
 
 function getSquaredElementsAtProperty(obj, property) {
-  if (Array.isArray(obj[property])) {
-    return obj[property].map(square);
-  } else {
+  let maybeArr = obj[property];
+
+  if (Array.isArray(maybeArr) === false) {
     return [];
   }
-}
 
+  return maybeArr.map(square);
+}

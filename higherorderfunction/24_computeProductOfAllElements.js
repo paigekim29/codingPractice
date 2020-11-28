@@ -13,6 +13,9 @@
 // 입출력 예시
 // let output = computeProductOfAllElements([2, 5, 6]);
 // console.log(output); // --> 60
+function computeProductOfAllElements(arr) {
+  return arr.reduce((acc, cur)=>acc * cur, 1)
+}
 
 
 function computeProductOfAllElements(arr) {

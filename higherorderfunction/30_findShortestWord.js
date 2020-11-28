@@ -16,37 +16,49 @@
 // let output = findShortestWord([4, 'two', 2, 'three']);
 // console.log(output); // --> 'two'
 
+function findShortestWord(arr) {
+  return arr => arr.filter(v => typeof v === 'string').
+      sort((a, b) => a.length - b.length)[0] || '';
+}
 
 function findShortestWord(arr) {
-    const word = arr.filter(function(el){
-      return typeof el === 'string'
-    })
-    if (word.length === 0){
-      return '';
-    }
-    return word.reduce(function(acc, val){
-      if(acc.length <=val.length){
-        return acc;
-      }
-      else{
-        return val;
-      }
-    })
+  if (arr.length === 0) return '';
+  const filtered = arr.filter(el => typeof el === 'string');
+  if (filtered.length === 0) {
+    return '';
   }
-  
-function findShortestWord(arr){
-    let words = arr.filter(function(el){
-      return typeof el ==='string';
-    })
-    if (words.length === 0){
-      return '';
+  return filtered.reduce((acc, cur) => acc.length <= cur.length ? acc : cur);
+}
+
+function findShortestWord(arr) {
+  let words = arr.filter(function(el) {
+    return typeof el === 'string';
+  });
+  if (words.length === 0) {
+    return '';
+  }
+  return words.reduce(function(acc, cur) {
+    if (acc.length <= cur.length) {
+      return acc;
+    } else {
+      return cur;
     }
-    return words.reduce(function(acc, cur){
-      if(acc.length <= cur.length){
-        return acc;
-      }
-      else{
-        return cur;
-      }
-    }) // cannot put inital value as '' because it will intervene if statement and give all ''
+  }); // cannot put inital value as '' because it will intervene if statement and give all ''
+}
+
+function findShortestWord(arr) {
+  const list = arr.filter(function(v) {
+    return typeof v === 'string';
+  });
+  if (list.length === 0) {
+    return '';
+  }
+  const callback = function(acc, cur) {
+    if (acc.length <= cur.length) {
+      return acc;
+    } else {
+      return cur;
+    }
+  };
+  return list.reduce(callback);
 }

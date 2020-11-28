@@ -39,4 +39,7 @@ function getOnlyAllowedToDrink(arr) {
       return el.name;
     })
   }
-  
+
+function getOnlyAllowedToDrink(arr) {
+  return arr.filter(el =>el.age >=18).map(el=> el.name)
+}

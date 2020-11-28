@@ -36,3 +36,15 @@ function isPrime(num) {
 
   return true;
 }
+function isPrime(num) {
+  let sqrt= Math.sqrt(num)
+  if(num===2){
+    return true
+  }
+  for(let i=3; i<=sqrt; i+=2){
+    if(num %i=== 0){
+      return false
+    }
+  }
+  return true
+}

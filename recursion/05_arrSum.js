@@ -32,75 +32,75 @@
 // const tail = arr.slice(1);
 // arrSum(arr)은 arr의 head에 arrSum(tail)을 더하는 방식으로 구할 수 있습니다.
 
-
-[1,2,3,4,5]
-[1]->1
-[1,2]->3
-[1,2,3]->6
-[1,2,3,4]->10
-[1,2,3,4,5]->15
-전 줄 + 내 마지막 요소
-function arrSum(arr) {
-  if(arr.length===0){
-    return 0
-  }
-  return arrSum(arr.slice(0,-1))+arr[arr.length-1]
-}
-
-
-function arrSum(arr) {
-  // TODO: 여기에 코드를 작성합니다.
-  // const head = arr[0]
-  // const tail = arr.slice(1)
-  // return head + tail
-  // n = n[0] + n.slice(1)
-  // n= arr.length
-
-  // base = 빈배열일 때, 0을 리턴
-  //[1,2,3,4]
-  // head : []
-  // tail:[1,2,3,4]
-  //
-  // head(1): 1
-  // tail: [2,3,4]
-  //
-  // head(2): 2
-  // tail:[3,4]
-  //
-  // head(3): 3
-  // tail: [4]
-  //
-  // head(4): 4
-  // tail: []
-  // head+ head(1)+ head(2)+...
-  // let result =0;
-  // for (let i = 0; i <arr.length; i++) {
-  //   result += arr[i]
-  // }
-  //총 합산한 결과 값이 필요
-  // if(arr.length === 0){
-  //   return 0
-  // } due to immutability
-  // if(arr[arr.length-1]){
-  //   return arr[arr.length-1]
-  // }
-  let count = arr.length;
-  if (arr.slice().length === 0) {
-    return 0;
-  }
-  count -= 1;
-  return arr[0] + arrSum(arr.slice(arr.length - count));
-}
-
-function arrSum(arr) {
-  if (arr.length === 0) {
-    return 0;
-  }
-  // const [head, ...tail] = arr;
-  const head = arr[0];
-  const tail = arr.slice(1);
-  return head + arrSum(tail);
-}
+//
+// [1,2,3,4,5]
+// [1]->1
+// [1,2]->3
+// [1,2,3]->6
+// [1,2,3,4]->10
+// [1,2,3,4,5]->15
+// 전 줄 + 내 마지막 요소
+// function arrSum(arr) {
+//   if(arr.length===0){
+//     return 0
+//   }
+//   return arrSum(arr.slice(0,-1))+arr[arr.length-1]
+// }
+//
+//
+// function arrSum(arr) {
+//   // TODO: 여기에 코드를 작성합니다.
+//   // const head = arr[0]
+//   // const tail = arr.slice(1)
+//   // return head + tail
+//   // n = n[0] + n.slice(1)
+//   // n= arr.length
+//
+//   // base = 빈배열일 때, 0을 리턴
+//   //[1,2,3,4]
+//   // head : []
+//   // tail:[1,2,3,4]
+//   //
+//   // head(1): 1
+//   // tail: [2,3,4]
+//   //
+//   // head(2): 2
+//   // tail:[3,4]
+//   //
+//   // head(3): 3
+//   // tail: [4]
+//   //
+//   // head(4): 4
+//   // tail: []
+//   // head+ head(1)+ head(2)+...
+//   // let result =0;
+//   // for (let i = 0; i <arr.length; i++) {
+//   //   result += arr[i]
+//   // }
+//   //총 합산한 결과 값이 필요
+//   // if(arr.length === 0){
+//   //   return 0
+//   // } due to immutability
+//   // if(arr[arr.length-1]){
+//   //   return arr[arr.length-1]
+//   // }
+//   let count = arr.length;
+//   if (arr.slice().length === 0) {
+//     return 0;
+//   }
+//   count -= 1;
+//   return arr[0] + arrSum(arr.slice(arr.length - count));
+// }
+//
+// function arrSum(arr) {
+//   if (arr.length === 0) {
+//     return 0;
+//   }
+//   // const [head, ...tail] = arr;
+//   const head = arr[0];
+//   const tail = arr.slice(1);
+//   return head + arrSum(tail);
+// }
 
 function arrSum(arr) {
   // TODO: 여기에 코드를 작성합니다.
@@ -120,3 +120,6 @@ function arrSum(arr) {
   const tail = arr.slice(1);
   return head + arrSum(tail)
 }
+
+let output = arrSum([-1, -2, 1, 3]);
+console.log(output);

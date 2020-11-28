@@ -14,6 +14,11 @@
 // let output = computeAverageOfNumbers([4, 5, 6]);
 // console.log(output); // --> 5
 
+function computeAverageOfNumbers(arr) {
+  if(arr.length ===0) return 0
+  return arr.reduce((acc,cur)=>acc+cur,0)/arr.length
+}
+
 
 function computeAverageOfNumbers(arr) {
     if(arr.length === 0){

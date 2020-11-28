@@ -20,3 +20,6 @@ function getDoubledElements(arr) {
       return el *2;
     })
   }
+function getDoubledElements(arr) {
+  return arr.map(el => el *2)
+}

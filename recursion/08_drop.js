@@ -41,13 +41,23 @@
 //   count -=1
 //   return result.push(drop(count, arr))
 // }
+//
+// [1,2,3,4]
+// drop(0)=[1,2,3,4]
+// drop(1)=[2,3,4] // drop(0).slice(1)
+// drop(2)=[3,4] //drop(1).slice(1)
+// drop(3)=[4] //drop(1).slice(2)
+// drop(4)=[]
 
-[1,2,3,4]
-drop(0)=[1,2,3,4]
-drop(1)=[2,3,4] // drop(0).slice(1)
-drop(2)=[3,4] //drop(1).slice(1)
-drop(3)=[4] //drop(1).slice(2)
-drop(4)=[]
+function drop(num, arr) {
+  if(num >arr.length){
+    num = arr.length
+  }
+  if(num===0){
+    return arr
+  }
+  return drop(num-1, arr.slice(1))
+}
 
 function drop(num, arr) {
   if(num===0){
@@ -85,7 +95,7 @@ function drop(num, arr) {
 // 1. arrProduct : num, arr => arr
 // 2. num개의 요소가 제거된 새로운 배열
 // 문제를 쪼갤 수 없는 경우: 빈 배열일 때? =1
-  tail = arr.slice(1)
+  const tail = arr.slice(1)
   if(arr.length === 0){
     return []
   }
@@ -97,3 +107,6 @@ function drop(num, arr) {
 
 //Tail은 배열에서 첫 값을 뺀 배열이고 drop을 돌면서 하나씩 빠지게 됨. 그리고 결국 num이 1일 될때
 // Tail을 리턴하면 가능
+
+let output = drop(2, [1, -2, 1, 3]);
+console.log(output)

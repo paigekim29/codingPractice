@@ -49,17 +49,60 @@
 // ];
 
 function studentReports(students) {
-    const female = students.filter(function(el){
-      return el.gender === 'female'
-    });
-    return female.map(function (el) {
-      const sum = el.grades.reduce(function (acc, cur) {
-        return acc + cur;
-      }, 0);
-      const avg = sum / el.grades.length;
-  
-      el.grades = avg;
-      return el;
-    });
+  const filtered = students.filter(v=>v.gender==='female')
+  return filtered.map(function(el){
+    const avg = el.grades.reduce((acc,cur)=>acc+cur,0)/el.grades.length
+    el.grades = avg
+    return el
+  })
 }
-  
+
+function studentReports(students) {
+  const female = students.filter(function(el) {
+    return el.gender === 'female';
+  });
+  return female.map(function(el) { //평균값을 넣어주는 역할
+    const sum = el.grades.reduce(function(acc, cur) {
+      return acc + cur;
+    }, 0);
+    const avg = sum / el.grades.length;
+
+    el.grades = avg;
+    return el;
+  });
+}
+
+function studentReports(students) {
+  const avg = function(arr) {
+    return arr.reduce(function(acc, cur) {
+      return acc + cur;
+    }) / arr.length; //avg function 만들음
+  };
+  students.forEach(function(v) {
+    v.grades = avg(v.grades);
+  });
+  return students.filter(function(v) {
+    return v.gender === 'female';
+  });
+}
+
+// {name: 'mari', ...obj}
+// 합칠 때 Obj에 name이 있으면, 'mari'가 덮여씌여짐
+
+
+function studentReports(students) {
+  const avg= function(arr){
+    return arr.reduce(function(acc, cur){
+      return acc + cur
+    }, 0)/arr.length
+  }
+  return student = students.reduce(function(acc, cur){
+    if(cur.gender === 'female'){
+      return [...acc, {...cur, grades : avg(cur.grades)}]
+    }
+    //객체도 spread syntax 가능한데,
+    else{
+      return acc // 아무것도 없을 때 빈배열이여야 가능
+    }
+  }, [])//cur.gender만 검사하고 싶으니깐 Initval 필요
+}

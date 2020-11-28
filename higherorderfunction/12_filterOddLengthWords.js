@@ -21,8 +21,10 @@ function filterOddLengthWords(words) {
         return false;
     });
 }
-  
 
+function filterOddLengthWords(words) {
+  return words.filter(v=>v.length%2===1)
+}
 function filterOddLengthWords(words) {
     return words.filter(function (el) {
       return el.length % 2 !== 0;

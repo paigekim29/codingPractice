@@ -17,6 +17,13 @@
 // output = removeExtremes(['where', 'is', 'the', 'longest', 'word']);
 // console.log(output); // --> ['where', 'the', 'word',]
 
+// [1,2,3,4]
+// [1,2,3]
+// 4랑 undefined도 잡아줘야하잖아요 근데 그냥 다른 length로받으면 4까지못가고 끝나버리겠죠
+// 그럼 항상 제일긴애까지 진행을해야 다른짧은애들의 undefined를 받아와서 검사를하겠죠
+// 안그러면 undefined.length
+// 위와 같이 단어의 길이가 다르더라도 for문이 작동할 수 있게 arr.length 와 str 중 가장 긴 for문의 길이를 찾아서 변수에 저장합니다.
+
 
 function removeExtremes(arr) { //index & filter
     let shortest =20;

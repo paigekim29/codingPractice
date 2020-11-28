@@ -20,6 +20,22 @@
 // console.log(output); // --> "TcaCSmbtba"
 
 function firstCharacter(str) {
+  return str.split(' ').map(e=>e[0]).join('')
+}
+
+function firstCharacter(str) {
+  let previousStr = ' '
+  let result =''
+  for(let i=0; i<str.length; i++){
+    if(previousStr===' '){
+      result += str[i]
+    }
+    previousStr = str[i]
+  }
+  return result
+}
+
+function firstCharacter(str) {
     let words = str.split(' ');
     let result = []
     for(let i = 0; i< words.length; i ++){

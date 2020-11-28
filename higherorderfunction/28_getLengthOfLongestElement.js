@@ -13,6 +13,9 @@
 // let output = getLengthOfLongestElement(['one', 'two', 'three']);
 // console.log(output); // --> 5
 
+function getLengthOfLongestElement(arr) {
+  return arr.reduce((acc,cur)=>acc.length>=cur.length?acc:cur, '').length
+}
 
 function getLengthOfLongestElement(arr) {
     return arr.reduce(function(acc, val){

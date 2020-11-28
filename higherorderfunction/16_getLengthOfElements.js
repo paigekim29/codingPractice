@@ -22,4 +22,7 @@ function getLengthOfElements(arr) {
       return el.length;
     })
   }
-  
+
+function getLengthOfElements(arr) {
+  return arr.map(el =>el.length)
+}
