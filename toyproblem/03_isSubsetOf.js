@@ -32,15 +32,15 @@ const isSubsetOf = function(base, sample) {
   base.sort((a, b) => a - b);
   sample.sort((a, b) => a - b);
   let count = 0;
-  if (sample[sample.length - 1] > base[base.length - 1]) return false;
-  // 샘플의 마지막 값이 base의 마지막 값보다 크다는 것은 더 이상 같지 않음으로 Return false
+  if(sample[sample.length-1] > base[base.length-1])return false;
   for (let i = 0; i < sample.length; i++) {
     for (let j = count; j < base.length; j++) {
-      if (sample[i] === base[j]) {
+      if (sample[i]=== base[j]) {
         count = j + 1;
         // 값이 같을 경우, base를 굳이 처음부터 돌 필요가 없기 때문에
         break;
-      } else if (sample[i] < base[j + 1]) return false;
+      }
+      else if (sample[i] < base[j + 1])return false;
       // 셈플의 값이 base값보다 크고 윗 if문에서 같지 않다라고 알게 되었고, 샘플 값이
       // 베이스 다음값보다 작다는 것은 더 이상 맞을 가능성이 없다
       // sort를 썼기 때문에
