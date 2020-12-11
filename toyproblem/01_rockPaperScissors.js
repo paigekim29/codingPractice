@@ -47,22 +47,22 @@
 //     ]
 //   */
 
-const rockPaperScissors = function(n) {
-  let result = [];
-  let rps = [['rock'], ['paper'], ['scissors']];
-  if (n === undefined) n = 3;
-  // n이 없을 때 처리해줘야 됨
-  if (n === 1) return [['rock'], ['paper'], ['scissors']];
-
-  let prev = rockPaperScissors(n - 1);
-
-  for (let i = 0; i < rps.length; i++) {
-    for (let j = 0; j < prev.length; j++) {
-      result.push([...rps[i], ...prev[j]]);
-    }
-  }
-  return result;
-};
+// const rockPaperScissors = function(n) {
+//   let result = [];
+//   let rps = [['rock'], ['paper'], ['scissors']];
+//   if (n === undefined) n = 3;
+//   // n이 없을 때 처리해줘야 됨
+//   if (n === 1) return [['rock'], ['paper'], ['scissors']];
+//
+//   let prev = rockPaperScissors(n - 1);
+//
+//   for (let i = 0; i < rps.length; i++) {
+//     for (let j = 0; j < prev.length; j++) {
+//       result.push([...rps[i], ...prev[j]]);
+//     }
+//   }
+//   return result;
+// };
 
 
 
@@ -103,3 +103,27 @@ const rockPaperScissors = function(n) {
 // n이 없다 가정하면 그거는 3으로 설정 => 문제에서 3판의 가위바위보를 할 경우라고 명시가 되어있기에...
 
 
+
+const rockPaperScissors = function (rounds) {
+  rounds = rounds || 3;
+  const rps = ['rock', 'paper', 'scissors'];
+
+  const outcomes = [];
+  let permutate = function (roundsToGo, playedSoFar) {
+    if (roundsToGo === 0) {
+      outcomes.push(playedSoFar);
+      return;
+    }
+
+    for (let i = 0; i < rps.length; i++) {
+      let currentPlay = rps[i];
+      permutate(roundsToGo - 1, playedSoFar.concat(currentPlay));
+    }
+  };
+
+  permutate(rounds, []);
+
+  return outcomes;
+};
+
+console.log(rockPaperScissors(4))
