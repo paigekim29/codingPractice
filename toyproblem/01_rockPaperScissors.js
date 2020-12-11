@@ -63,3 +63,43 @@ const rockPaperScissors = function(n) {
   }
   return result;
 };
+
+
+
+// n=1
+// [ [rock],
+//  [paper],
+//  [scissor]]
+//
+// n=2
+// [ [rock, rock],
+//  [rock, paper]
+//  [rock, scissor],
+//  [paper, rock],
+//  [paper, paper]
+//  [paper, scissor],
+//  [scissor, rock],
+//  [scissor, paper],
+//  [scissor, scissor]]
+
+// n=3
+// [[rock, rock, rock],
+// [rock, rock, paper],
+// [rock, rock, scissor],
+// [rock,paper, rock],
+// [rock, paper, paper],
+// [rock, paper, scissor],
+// [rock, scissor, rock],
+// [rock, scissor, paper],
+// [rock, scissor, scissor], ...]
+
+// 결과적으로 배열 i의 첫번째 값은 항상 rock, paper, scisoor로 고정되지만
+// 그 뒤로는 n-1의 값이 붙여지는 것을 볼 수 있다
+// 재귀로 풀 때, n=1이며 [['rock'],['paper'],['scissor']]로 탈출문으로 만들기
+// result라는 빈배열에 for loop을 돌면서 넣어주기
+// 바깥 for loop은 [['rock'],['paper'],['scissor']]
+// 안쪽 for loop은 rockPaperScissors(n-1)일 때가 좋을듯
+// result에 넣을 때, 한 번 배열로 감싸준다
+// n이 없다 가정하면 그거는 3으로 설정 => 문제에서 3판의 가위바위보를 할 경우라고 명시가 되어있기에...
+
+
