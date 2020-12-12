@@ -113,6 +113,7 @@ const rockPaperScissors = function (rounds) {
     if (roundsToGo === 0) {
       outcomes.push(playedSoFar);
       return;
+      // return을 하면 그 전 상태를 넘겨줌
     }
 
     for (let i = 0; i < rps.length; i++) {
