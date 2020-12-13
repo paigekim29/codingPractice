@@ -127,4 +127,4 @@ const rockPaperScissors = function (rounds) {
   return outcomes;
 };
 
-console.log(rockPaperScissors(4))
+console.log(rockPaperScissors(2))
