@@ -24,3 +24,11 @@ const largestProductOfThree = function (arr) {
     return arr[0] * arr[1] * arr[arr.length - 1]
   } else return arr.splice(arr.length - 3).reduce((acc, cur) => acc * cur, 1)
 };
+
+const largestProductOfThree = function (arr) {
+  const sorted = arr.slice().sort((a, b) => a - b);
+  const len = arr.length;
+  const candi1 = sorted[len - 1] * sorted[len - 2] * sorted[len - 3];
+  const candi2 = sorted[len - 1] * sorted[0] * sorted[1];
+  return Math.max(candi1, candi2);
+};
