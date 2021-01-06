@@ -25,6 +25,8 @@ const largestProductOfThree = function (arr) {
   } else return arr.splice(arr.length - 3).reduce((acc, cur) => acc * cur, 1)
 };
 
+
+// reference
 const largestProductOfThree = function (arr) {
   const sorted = arr.slice().sort((a, b) => a - b);
   const len = arr.length;

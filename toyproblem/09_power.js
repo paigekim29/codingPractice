@@ -66,13 +66,13 @@ function power(base, exponent) {
 // }
 
 console.log(power(2, 4))
-// function power(base, exponent) {
-//   if (exponent === 0) return 1;
-//
-//   const half = parseInt(exponent / 2);
-//   const temp = power(base, half);
-//   const result = (temp * temp) % 1000000009;
-//
-//   if (exponent % 2 === 1) return (base * result) % 1000000009;
-//   else return result;
-// }
+function power(base, exponent) {
+  if (exponent === 0) return 1;
+
+  const half = parseInt(exponent / 2);
+  const temp = power(base, half);
+  const result = (temp * temp) % 1000000009;
+
+  if (exponent % 2 === 1) return (base * result) % 1000000009;
+  else return result;
+}
